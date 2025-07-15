@@ -5,12 +5,12 @@ fetch('malla.json')
     const creditosDiv = document.getElementById('creditos-totales');
     let creditos = 0;
 
-    data.semestres.forEach((semestre, index) => {
+    data.semestres.forEach((semestre) => {
       const divSemestre = document.createElement('div');
       divSemestre.className = 'semestre';
-      divSemestre.innerHTML = `<h2>Semestre ${index + 1}</h2>`;
+      divSemestre.innerHTML = `<h2>Semestre ${semestre.numero}</h2>`;
 
-      semestre.forEach(curso => {
+      semestre.cursos.forEach(curso => {
         const divCurso = document.createElement('div');
         divCurso.className = `curso ${curso.tipo}`;
         divCurso.textContent = `${curso.nombre} (${curso.creditos} créditos)`;
