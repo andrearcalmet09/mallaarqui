@@ -1,1 +1,90 @@
+[
+  [
+    {"id":"DPS","nombre":"Desarrollo Personal y Social","creditos":3,"tipo":"obligatorio","prerequisitos":[]},
+    {"id":"LC1","nombre":"Lenguaje y Comunicación I","creditos":4,"tipo":"obligatorio","prerequisitos":[]},
+    {"id":"MPA","nombre":"Matemática para Arquitectura","creditos":5,"tipo":"obligatorio","prerequisitos":[]},
+    {"id":"PDA1","nombre":"Proyecto de Arquitectura I","creditos":5,"tipo":"obligatorio","prerequisitos":[]},
+    {"id":"DI1","nombre":"Dibujo I","creditos":3,"tipo":"obligatorio","prerequisitos":[]},
+    {"id":"EC","nombre":"Ética Cívica","creditos":2,"tipo":"obligatorio","prerequisitos":[]}
+  ],
+  [
+    {"id":"EE","nombre":"Economía y Empresa","creditos":3,"tipo":"obligatorio","prerequisitos":[]},
+    {"id":"LC2","nombre":"Lenguaje y Comunicación II","creditos":3,"tipo":"obligatorio","prerequisitos":["LC1"]},
+    {"id":"PSP","nombre":"Procesos Sociales y Políticos","creditos":3,"tipo":"obligatorio","prerequisitos":[]},
+    {"id":"TF","nombre":"Temas de Filosofía","creditos":3,"tipo":"obligatorio","prerequisitos":[]},
+    {"id":"PDA2","nombre":"Proyecto de Arquitectura II","creditos":6,"tipo":"obligatorio","prerequisitos":["PDA1"]},
+    {"id":"DI2","nombre":"Dibujo II","creditos":4,"tipo":"obligatorio","prerequisitos":["DI1"]}
+  ],
+  [
+    {"id":"PDA3","nombre":"Proyecto de Arquitectura III","creditos":8,"tipo":"obligatorio","prerequisitos":["PDA2"]},
+    {"id":"DI3","nombre":"Dibujo III","creditos":3,"tipo":"obligatorio","prerequisitos":["DI2"]},
+    {"id":"HA","nombre":"Historia del Arte","creditos":3,"tipo":"obligatorio","prerequisitos":["LC2"]},
+    {"id":"EST","nombre":"Estadística","creditos":3,"tipo":"obligatorio","prerequisitos":["EE"]},
+    {"id":"CON1","nombre":"Construcción I","creditos":3,"tipo":"obligatorio","prerequisitos":[]},
+    {"id":"FIS","nombre":"Física","creditos":3,"tipo":"obligatorio","prerequisitos":["MPA"]}
+  ],
+  [
+    {"id":"PDA4","nombre":"Proyecto de Arquitectura IV","creditos":8,"tipo":"obligatorio","prerequisitos":["PDA3"]},
+    {"id":"GD","nombre":"Gráfica Digital","creditos":3,"tipo":"obligatorio","prerequisitos":["DI3"]},
+    {"id":"HTA1","nombre":"Historia y Teoría de la Arq I","creditos":3,"tipo":"obligatorio","prerequisitos":["HA"]},
+    {"id":"MAR","nombre":"Medio Ambiente y Recursos Naturales","creditos":3,"tipo":"obligatorio","prerequisitos":["PSP"]},
+    {"id":"CON2","nombre":"Construcción II","creditos":3,"tipo":"obligatorio","prerequisitos":["CON1"]},
+    {"id":"OE","nombre":"Orientación Estructural","creditos":3,"tipo":"obligatorio","prerequisitos":["FIS"]}
+  ],
+  [
+    {"id":"PDA5","nombre":"Proyecto de Arquitectura V","creditos":8,"tipo":"obligatorio","prerequisitos":["PDA4"]},
+    {"id":"DPP","nombre":"Dibujo y Presentación de Proy.","creditos":3,"tipo":"obligatorio","prerequisitos":["GD"]},
+    {"id":"HTA2","nombre":"Historia y Teoría Arq II","creditos":3,"tipo":"obligatorio","prerequisitos":["HTA1"]},
+    {"id":"AAC","nombre":"Acondicionamiento Ambiental I","creditos":3,"tipo":"obligatorio","prerequisitos":["MAR"]},
+    {"id":"INST1","nombre":"Instalaciones I","creditos":3,"tipo":"obligatorio","prerequisitos":["CON2","OE"]},
+    {"id":"EST1","nombre":"Estructuras I","creditos":3,"tipo":"obligatorio","prerequisitos":["OE"]}
+  ],
+  [
+    {"id":"PDA6","nombre":"Proyecto de Arquitectura VI","creditos":8,"tipo":"obligatorio","prerequisitos":["PDA5"]},
+    {"id":"URB1","nombre":"Urbanismo I","creditos":3,"tipo":"obligatorio","prerequisitos":["MAR","HTA2"]},
+    {"id":"HTA3","nombre":"Historia y Teoría Arq III","creditos":3,"tipo":"obligatorio","prerequisitos":["HTA2"]},
+    {"id":"AAC2","nombre":"Acondicionamiento Ambiental II","creditos":3,"tipo":"obligatorio","prerequisitos":["AAC"]},
+    {"id":"INST2","nombre":"Instalaciones II","creditos":3,"tipo":"obligatorio","prerequisitos":["INST1","DPP"]},
+    {"id":"EST2","nombre":"Estructuras II","creditos":3,"tipo":"obligatorio","prerequisitos":["EST1"]}
+  ],
+  [
+    {"id":"PDA7","nombre":"Proyecto de Arquitectura VII","creditos":8,"tipo":"obligatorio","prerequisitos":["PDA6"]},
+    {"id":"URB2","nombre":"Urbanismo II","creditos":3,"tipo":"obligatorio","prerequisitos":["URB1"]},
+    {"id":"HTAPE","nombre":"Historia Arq Peruana","creditos":3,"tipo":"obligatorio","prerequisitos":["HTA3"]},
+    {"id":"GP1","nombre":"Gestión de Proyectos I","creditos":3,"tipo":"obligatorio","prerequisitos":["EST"]},
+    {"id":"MET","nombre":"Metrados y Presupuesto","creditos":3,"tipo":"obligatorio","prerequisitos":["INST2","EST2"]},
+    {"id":"EST3","nombre":"Estructuras III","creditos":3,"tipo":"obligatorio","prerequisitos":["EST2"]}
+  ],
+  [
+    {"id":"PDA8","nombre":"Proyecto de Arquitectura VIII","creditos":8,"tipo":"obligatorio","prerequisitos":["PDA7"]},
+    {"id":"DEPO","nombre":"Desarrollo de Proyecto","creditos":3,"tipo":"obligatorio","prerequisitos":["INST2","EST3"]},
+    {"id":"GP2","nombre":"Gestión de Proyectos II","creditos":3,"tipo":"obligatorio","prerequisitos":["GP1","MET"]},
+    {"id":"META","nombre":"Metrados etc.","creditos":3,"tipo":"obligatorio","prerequisitos":["MET"]},
+    {"id":"FOT","nombre":"Fotografía","creditos":2,"tipo":"electivo","prerequisitos":["GD"]},
+    {"id":"APU","nombre":"Apuntes","creditos":2,"tipo":"electivo","prerequisitos":["GD"]},
+    {"id":"CAD","nombre":"CAD Avanzado","creditos":2,"tipo":"electivo","prerequisitos":["DPP"]},
+    {"id":"INT","nombre":"Arquitectura de Interiores","creditos":2,"tipo":"electivo","prerequisitos":["INST2"]},
+    {"id":"PAI","nombre":"Arquitectura Paisajista","creditos":2,"tipo":"electivo","prerequisitos":["AAC2"]},
+    {"id":"CONP","nombre":"Conserv. Patrimonio","creditos":2,"tipo":"electivo","prerequisitos":["HTAPE"]},
+    {"id":"DFD","nombre":"Diseño y Fab. Digital","creditos":2,"tipo":"electivo","prerequisitos":["DPP"]},
+    {"id":"METI","nombre":"Metodología Investigación","creditos":2,"tipo":"electivo","prerequisitos":["HTAPE"]}
+  ],
+  [
+    {"id":"PDA9","nombre":"Proyecto de Arq IX","creditos":8,"tipo":"obligatorio","prerequisitos":["PDA8"]},
+    {"id":"GP3","nombre":"Gestión Proyectos III","creditos":3,"tipo":"obligatorio","prerequisitos":["GP2","DEPO"]},
+    {"id":"ABAS","nombre":"Acabados de Construcción","creditos":2,"tipo":"electivo","prerequisitos":["DEPO"]},
+    {"id":"VIV","nombre":"Diseño de la Vivienda","creditos":2,"tipo":"electivo","prerequisitos":["URB2"]},
+    {"id":"ARA","nombre":"Análisis Regional y Urbano","creditos":2,"tipo":"electivo","prerequisitos":["URB2"]},
+    {"id":"ACU","nombre":"Acústica","creditos":2,"tipo":"electivo","prerequisitos":["AAC2"]},
+    {"id":"CCH","nombre":"Conserv. Centros Históricos","creditos":2,"tipo":"electivo","prerequisitos":["HTAPE"]},
+    {"id":"TOP","nombre":"Topografía y Mecánica Suelos","creditos":2,"tipo":"electivo","prerequisitos":["DEPO"]},
+    {"id":"LUM","nombre":"Diseño Lumínico Arquitectónico","creditos":2,"tipo":"electivo","prerequisitos":["AAC2"]}
+  ],
+  [
+    {"id":"PFC","nombre":"Proyecto Fin de Carrera","creditos":8,"tipo":"obligatorio","prerequisitos":["PDA9"]},
+    {"id":"GP4","nombre":"Gestión Proyectos IV","creditos":4,"tipo":"obligatorio","prerequisitos":["GP3"]},
+    {"id":"SI","nombre":"Seminario Investigación Arq","creditos":4,"tipo":"obligatorio","prerequisitos":["HTAPE","GP3"]},
+    {"id":"SH","nombre":"Seminario Historia Arq","creditos":4,"tipo":"electivo","prerequisitos":["HTAPE"]}
+  ]
+]
 
