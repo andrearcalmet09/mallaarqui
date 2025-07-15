@@ -1,59 +1,37 @@
-let creditosTotales = 0;
+fetch('malla.json')
+  .then(response => response.json())
+  .then(data => {
+    const container = document.getElementById('malla-container');
+    const creditosDiv = document.getElementById('creditos-totales');
+    let creditos = 0;
 
-async function cargarMalla() {
-  const res = await fetch('malla.json');
-  const data = await res.json();
-  const container = document.getElementById('malla-container');
+    data.semestres.forEach((semestre, index) => {
+      const divSemestre = document.createElement('div');
+      divSemestre.className = 'semestre';
+      divSemestre.innerHTML = `<h2>Semestre ${index + 1}</h2>`;
 
-  data.forEach((sem, i) => {
-    const divSem = document.createElement('div');
-    divSem.className = 'semestre';
-    divSem.innerHTML = `<h2>Semestre ${i+1}</h2>`;
-    sem.forEach(c => {
-      const div = document.createElement('div');
-      div.className = `curso ${c.tipo}`;
-      div.textContent = `${c.nombre} (${c.creditos} cr)`;
-      div.dataset.id = c.id;
-      div.dataset.pr = JSON.stringify(c.prerequisitos);
-      div.addEventListener('click', () => toggleCurso(div, c.creditos));
-      divSem.appendChild(div);
+      semestre.forEach(curso => {
+        const divCurso = document.createElement('div');
+        divCurso.className = `curso ${curso.tipo}`;
+        divCurso.textContent = `${curso.nombre} (${curso.creditos} créditos)`;
+
+        divCurso.addEventListener('click', () => {
+          if (!divCurso.classList.contains('aprobado')) {
+            divCurso.classList.add('aprobado');
+            creditos += curso.creditos;
+          } else {
+            divCurso.classList.remove('aprobado');
+            creditos -= curso.creditos;
+          }
+          creditosDiv.textContent = `Créditos Aprobados: ${creditos}`;
+        });
+
+        divSemestre.appendChild(divCurso);
+      });
+
+      container.appendChild(divSemestre);
     });
-    container.appendChild(divSem);
+  })
+  .catch(error => {
+    console.error("Error cargando la malla:", error);
   });
-  habilitarCursos();
-  actualizarCreditos();
-}
-
-function toggleCurso(el, cred) {
-  if (el.classList.contains('bloqueado')) return;
-  if (el.classList.contains('aprobado')) {
-    el.classList.remove('aprobado');
-    creditosTotales -= cred;
-  } else {
-    el.classList.add('aprobado');
-    creditosTotales += cred;
-  }
-  actualizarCreditos();
-  habilitarCursos();
-}
-
-function habilitarCursos() {
-  const aprobados = Array.from(document.querySelectorAll('.curso.aprobado'))
-                         .map(e => e.dataset.id);
-  document.querySelectorAll('.curso').forEach(el => {
-    const prereqs = JSON.parse(el.dataset.pr);
-    if (el.classList.contains('aprobado')) {
-      el.classList.remove('bloqueado');
-    } else {
-      const ok = prereqs.every(r => aprobados.includes(r));
-      el.classList.toggle('bloqueado', !ok);
-    }
-  });
-}
-
-function actualizarCreditos() {
-  document.getElementById('creditos-totales').textContent = `Créditos aprobados: ${creditosTotales}`;
-}
-
-document.addEventListener('DOMContentLoaded', cargarMalla);
-
