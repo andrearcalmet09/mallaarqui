@@ -1,37 +1,28 @@
 fetch('malla.json')
-  .then(response => response.json())
-  .then(data => {
-    const container = document.getElementById('malla-container');
-    const creditosDiv = document.getElementById('creditos-totales');
-    let creditos = 0;
-
-    data.semestres.forEach((semestre) => {
-      const divSemestre = document.createElement('div');
-      divSemestre.className = 'semestre';
-      divSemestre.innerHTML = `<h2>Semestre ${semestre.numero}</h2>`;
-
-      semestre.cursos.forEach(curso => {
-        const divCurso = document.createElement('div');
-        divCurso.className = `curso ${curso.tipo}`;
-        divCurso.textContent = `${curso.nombre} (${curso.creditos} créditos)`;
-
-        divCurso.addEventListener('click', () => {
-          if (!divCurso.classList.contains('aprobado')) {
-            divCurso.classList.add('aprobado');
-            creditos += curso.creditos;
-          } else {
-            divCurso.classList.remove('aprobado');
-            creditos -= curso.creditos;
-          }
-          creditosDiv.textContent = `Créditos Aprobados: ${creditos}`;
+  .then(r=>r.json()).then(data=>{
+    const cont=document.getElementById('malla-container');
+    const credEl=document.getElementById('creditos-totales');
+    let totalCred=0;
+    data.semestres.forEach(s=>{
+      const box=document.createElement('div');
+      box.className='semestre';
+      box.innerHTML=`<h2>Semestre ${s.numero}</h2>`;
+      s.cursos.forEach(c=>{
+        const el=document.createElement('div');
+        el.className=`curso ${c.tipo}`;
+        el.textContent=`${c.nombre} (${c.creditos} créditos)`;
+        const tip=document.createElement('span');
+        tip.className='tooltip';
+        tip.textContent=c.tipo==='electivo'? 'Electivo' : 'Obligatorio';
+        el.appendChild(tip);
+        el.addEventListener('click',()=>{
+          el.classList.toggle('aprobado');
+          totalCred += el.classList.contains('aprobado') ? c.creditos : -c.creditos;
+          credEl.textContent=`Créditos Aprobados: ${totalCred}`;
         });
-
-        divSemestre.appendChild(divCurso);
+        box.appendChild(el);
       });
-
-      container.appendChild(divSemestre);
+      cont.appendChild(box);
     });
   })
-  .catch(error => {
-    console.error("Error cargando la malla:", error);
-  });
+  .catch(e=>console.error(e));
