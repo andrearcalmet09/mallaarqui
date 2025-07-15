@@ -3,99 +3,107 @@
     {
       "numero": 1,
       "cursos": [
-        {"nombre": "Introducción a la Arquitectura", "creditos": 4, "tipo": "obligatorio"},
-        {"nombre": "Dibujo Arquitectónico I", "creditos": 4, "tipo": "obligatorio"},
-        {"nombre": "Matemática para Arquitectura", "creditos": 5, "tipo": "obligatorio"},
-        {"nombre": "Historia de la Arquitectura I", "creditos": 3, "tipo": "obligatorio"},
-        {"nombre": "Taller de Diseño I", "creditos": 6, "tipo": "obligatorio"}
+        {"nombre":"Desarrollo Personal y Social","creditos":3,"tipo":"obligatorio"},
+        {"nombre":"Lenguaje y Comunicación I","creditos":4,"tipo":"obligatorio"},
+        {"nombre":"Matemática para Arquitectura","creditos":5,"tipo":"obligatorio"},
+        {"nombre":"Proyecto de Arquitectura I","creditos":5,"tipo":"obligatorio"},
+        {"nombre":"Dibujo I","creditos":3,"tipo":"obligatorio"},
+        {"nombre":"Ética Cívica","creditos":2,"tipo":"obligatorio"}
       ]
     },
     {
       "numero": 2,
       "cursos": [
-        {"nombre": "Taller de Diseño II", "creditos": 6, "tipo": "obligatorio", "requisitos": ["Taller de Diseño I"]},
-        {"nombre": "Dibujo Arquitectónico II", "creditos": 4, "tipo": "obligatorio", "requisitos": ["Dibujo Arquitectónico I"]},
-        {"nombre": "Física Aplicada", "creditos": 4, "tipo": "obligatorio"},
-        {"nombre": "Historia de la Arquitectura II", "creditos": 3, "tipo": "obligatorio", "requisitos": ["Historia de la Arquitectura I"]},
-        {"nombre": "Geometría Descriptiva", "creditos": 4, "tipo": "obligatorio"}
+        {"nombre":"Economía y Empresa","creditos":3,"tipo":"obligatorio"},
+        {"nombre":"Lenguaje y Comunicación II","creditos":3,"tipo":"obligatorio"},
+        {"nombre":"Procesos Sociales y Políticos","creditos":3,"tipo":"obligatorio"},
+        {"nombre":"Temas de Filosofía","creditos":3,"tipo":"obligatorio"},
+        {"nombre":"Proyecto de Arquitectura II","creditos":6,"tipo":"obligatorio"},
+        {"nombre":"Dibujo II","creditos":4,"tipo":"obligatorio"}
       ]
     },
     {
       "numero": 3,
       "cursos": [
-        {"nombre": "Taller de Diseño III", "creditos": 6, "tipo": "obligatorio", "requisitos": ["Taller de Diseño II"]},
-        {"nombre": "Materiales de Construcción", "creditos": 4, "tipo": "obligatorio"},
-        {"nombre": "Instalaciones Sanitarias", "creditos": 3, "tipo": "obligatorio"},
-        {"nombre": "Historia del Arte y Arquitectura", "creditos": 3, "tipo": "obligatorio"},
-        {"nombre": "Modelado Digital I", "creditos": 3, "tipo": "obligatorio"}
+        {"nombre":"Proyecto de Arquitectura III","creditos":8,"tipo":"obligatorio"},
+        {"nombre":"Dibujo III","creditos":3,"tipo":"obligatorio"},
+        {"nombre":"Historia del Arte","creditos":3,"tipo":"obligatorio"},
+        {"nombre":"Estadística","creditos":3,"tipo":"obligatorio"},
+        {"nombre":"Construcción I","creditos":3,"tipo":"obligatorio"},
+        {"nombre":"Física","creditos":3,"tipo":"obligatorio"}
       ]
     },
     {
       "numero": 4,
       "cursos": [
-        {"nombre": "Taller de Diseño IV", "creditos": 6, "tipo": "obligatorio", "requisitos": ["Taller de Diseño III"]},
-        {"nombre": "Estructuras I", "creditos": 4, "tipo": "obligatorio"},
-        {"nombre": "Instalaciones Eléctricas", "creditos": 3, "tipo": "obligatorio"},
-        {"nombre": "Modelado Digital II", "creditos": 3, "tipo": "obligatorio", "requisitos": ["Modelado Digital I"]},
-        {"nombre": "Técnicas Constructivas", "creditos": 4, "tipo": "obligatorio"}
+        {"nombre":"Proyecto de Arquitectura IV","creditos":8,"tipo":"obligatorio"},
+        {"nombre":"Gráfica Digital","creditos":3,"tipo":"obligatorio"},
+        {"nombre":"Historia y Teoría de la Arquitectura I","creditos":3,"tipo":"obligatorio"},
+        {"nombre":"Medio Ambiente y Recursos Naturales","creditos":3,"tipo":"obligatorio"},
+        {"nombre":"Construcción II","creditos":3,"tipo":"obligatorio"},
+        {"nombre":"Orientación Estructural","creditos":3,"tipo":"obligatorio"}
       ]
     },
     {
       "numero": 5,
       "cursos": [
-        {"nombre": "Taller de Diseño V", "creditos": 6, "tipo": "obligatorio", "requisitos": ["Taller de Diseño IV"]},
-        {"nombre": "Estructuras II", "creditos": 4, "tipo": "obligatorio", "requisitos": ["Estructuras I"]},
-        {"nombre": "Sistemas de Transporte Vertical", "creditos": 3, "tipo": "obligatorio"},
-        {"nombre": "Modelado Digital III", "creditos": 3, "tipo": "obligatorio", "requisitos": ["Modelado Digital II"]},
-        {"nombre": "Análisis Urbano", "creditos": 3, "tipo": "obligatorio"}
+        {"nombre":"Proyecto de Arquitectura V","creditos":8,"tipo":"obligatorio"},
+        {"nombre":"Dibujo y Presentación de Proyectos","creditos":3,"tipo":"obligatorio"},
+        {"nombre":"Historia y Teoría de la Arquitectura II","creditos":3,"tipo":"obligatorio"},
+        {"nombre":"Acondicionamiento Ambiental I","creditos":3,"tipo":"obligatorio"},
+        {"nombre":"Instalaciones I","creditos":3,"tipo":"obligatorio"},
+        {"nombre":"Estructuras I","creditos":3,"tipo":"obligatorio"}
       ]
     },
     {
       "numero": 6,
       "cursos": [
-        {"nombre": "Taller de Diseño VI", "creditos": 6, "tipo": "obligatorio", "requisitos": ["Taller de Diseño V"]},
-        {"nombre": "Estructuras III", "creditos": 4, "tipo": "obligatorio", "requisitos": ["Estructuras II"]},
-        {"nombre": "Legislación Urbana", "creditos": 3, "tipo": "obligatorio"},
-        {"nombre": "Diseño Sostenible", "creditos": 3, "tipo": "obligatorio"},
-        {"nombre": "Electivo 1", "creditos": 3, "tipo": "electivo"}
+        {"nombre":"Proyecto de Arquitectura VI","creditos":8,"tipo":"obligatorio"},
+        {"nombre":"Urbanismo I","creditos":3,"tipo":"obligatorio"},
+        {"nombre":"Historia y Teoría de la Arquitectura III","creditos":3,"tipo":"obligatorio"},
+        {"nombre":"Acondicionamiento Ambiental II","creditos":3,"tipo":"obligatorio"},
+        {"nombre":"Instalaciones II","creditos":3,"tipo":"obligatorio"},
+        {"nombre":"Estructuras II","creditos":3,"tipo":"obligatorio"}
       ]
     },
     {
       "numero": 7,
       "cursos": [
-        {"nombre": "Taller de Diseño VII", "creditos": 6, "tipo": "obligatorio", "requisitos": ["Taller de Diseño VI"]},
-        {"nombre": "Gestión de Proyectos Arquitectónicos", "creditos": 3, "tipo": "obligatorio"},
-        {"nombre": "Arquitectura Bioclimática", "creditos": 3, "tipo": "obligatorio"},
-        {"nombre": "Ética Profesional", "creditos": 3, "tipo": "obligatorio"},
-        {"nombre": "Electivo 2", "creditos": 3, "tipo": "electivo"}
+        {"nombre":"Proyecto de Arquitectura VII","creditos":8,"tipo":"obligatorio"},
+        {"nombre":"Urbanismo II","creditos":3,"tipo":"obligatorio"},
+        {"nombre":"Historia de la Arquitectura Peruana","creditos":3,"tipo":"obligatorio"},
+        {"nombre":"Gestión de Proyectos I","creditos":3,"tipo":"obligatorio"},
+        {"nombre":"Metrados, Presupuesto y Programación de Obra","creditos":3,"tipo":"obligatorio"},
+        {"nombre":"Estructuras III","creditos":3,"tipo":"obligatorio"}
       ]
     },
     {
       "numero": 8,
       "cursos": [
-        {"nombre": "Taller de Diseño VIII", "creditos": 6, "tipo": "obligatorio", "requisitos": ["Taller de Diseño VII"]},
-        {"nombre": "Proyecto Urbano", "creditos": 4, "tipo": "obligatorio"},
-        {"nombre": "Electivo 3", "creditos": 3, "tipo": "electivo"},
-        {"nombre": "Electivo 4", "creditos": 3, "tipo": "electivo"},
-        {"nombre": "Arquitectura y Ciudad", "creditos": 3, "tipo": "obligatorio"}
+        {"nombre":"Proyecto de Arquitectura VIII","creditos":8,"tipo":"obligatorio"},
+        {"nombre":"Desarrollo de Proyecto","creditos":3,"tipo":"obligatorio"},
+        {"nombre":"Gestión de Proyectos II","creditos":3,"tipo":"obligatorio"}
       ]
     },
     {
       "numero": 9,
       "cursos": [
-        {"nombre": "Taller de Proyecto Final I", "creditos": 8, "tipo": "obligatorio", "requisitos": ["Taller de Diseño VIII"]},
-        {"nombre": "Seminario de Tesis I", "creditos": 4, "tipo": "obligatorio"},
-        {"nombre": "Electivo 5", "creditos": 3, "tipo": "electivo"},
-        {"nombre": "Electivo 6", "creditos": 3, "tipo": "electivo"}
+        {"nombre":"Proyecto de Arquitectura IX","creditos":8,"tipo":"obligatorio"},
+        {"nombre":"Gestión de Proyectos III","creditos":3,"tipo":"obligatorio"},
+        {"nombre":"Electivo A: Fotografía","creditos":2,"tipo":"electivo"},
+        {"nombre":"Electivo B: CAD Avanzado","creditos":2,"tipo":"electivo"},
+        {"nombre":"Electivo C: Acústica","creditos":2,"tipo":"electivo"},
+        {"nombre":"Electivo D: Paisajismo","creditos":2,"tipo":"electivo"}
       ]
     },
     {
       "numero": 10,
       "cursos": [
-        {"nombre": "Taller de Proyecto Final II", "creditos": 8, "tipo": "obligatorio", "requisitos": ["Taller de Proyecto Final I"]},
-        {"nombre": "Seminario de Tesis II", "creditos": 4, "tipo": "obligatorio", "requisitos": ["Seminario de Tesis I"]},
-        {"nombre": "Electivo 7", "creditos": 3, "tipo": "electivo"},
-        {"nombre": "Electivo 8", "creditos": 3, "tipo": "electivo"}
+        {"nombre":"Proyecto de Fin de Carrera","creditos":8,"tipo":"obligatorio"},
+        {"nombre":"Gestión de Proyectos IV","creditos":4,"tipo":"obligatorio"},
+        {"nombre":"Seminario de Investigación en Arquitectura","creditos":4,"tipo":"obligatorio"},
+        {"nombre":"Electivo E: Seminario de Construcción","creditos":4,"tipo":"electivo"},
+        {"nombre":"Electivo F: Seminario de Urbanismo","creditos":4,"tipo":"electivo"}
       ]
     }
   ]
