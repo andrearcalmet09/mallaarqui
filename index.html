@@ -1,15 +1,35 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <title>Malla Arquitectura ULima 2025</title>
-  <link rel="stylesheet" href="estilo.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Malla de Arquitectura 2025</title>
+  <link rel="stylesheet" href="estilo.css" />
 </head>
 <body>
-  <h1>Malla Curricular Arquitectura 2025</h1>
-  <div id="creditos-totales">Créditos aprobados: 0</div>
+  <h1>📐 Malla Curricular de Arquitectura 2025</h1>
+  <div id="progreso-general">
+    <div id="creditos-info">
+      <p><strong>Créditos Aprobados:</strong> <span id="creditos-aprobados">0</span> / <span id="creditos-totales">0</span></p>
+      <p><strong>Obligatorios:</strong> <span id="obligatorios-aprobados">0</span> / <span id="obligatorios-totales">0</span></p>
+      <p><strong>Electivos:</strong> <span id="electivos-aprobados">0</span> / <span id="electivos-totales">0</span></p>
+    </div>
+    <div class="progreso-barra">
+      <div id="progreso-barra-fill"></div>
+    </div>
+  </div>
+
+  <div id="filtros">
+    <button onclick="filtrar('todos')">Mostrar Todos</button>
+    <button onclick="filtrar('obligatorio')">Solo Obligatorios</button>
+    <button onclick="filtrar('electivo')">Solo Electivos</button>
+    <input type="text" id="buscador" placeholder="Buscar curso..." oninput="buscarCurso(this.value)" />
+  </div>
+
   <div id="malla-container"></div>
+
   <script src="script.js"></script>
 </body>
 </html>
+
 
