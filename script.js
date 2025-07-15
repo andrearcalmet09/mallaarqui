@@ -1,28 +1,76 @@
+let totalCreditos = 0;
+let creditosMaximos = 0;
+
 fetch('malla.json')
-  .then(r=>r.json()).then(data=>{
-    const cont=document.getElementById('malla-container');
-    const credEl=document.getElementById('creditos-totales');
-    let totalCred=0;
-    data.semestres.forEach(s=>{
-      const box=document.createElement('div');
-      box.className='semestre';
-      box.innerHTML=`<h2>Semestre ${s.numero}</h2>`;
-      s.cursos.forEach(c=>{
-        const el=document.createElement('div');
-        el.className=`curso ${c.tipo}`;
-        el.textContent=`${c.nombre} (${c.creditos} créditos)`;
-        const tip=document.createElement('span');
-        tip.className='tooltip';
-        tip.textContent=c.tipo==='electivo'? 'Electivo' : 'Obligatorio';
-        el.appendChild(tip);
-        el.addEventListener('click',()=>{
-          el.classList.toggle('aprobado');
-          totalCred += el.classList.contains('aprobado') ? c.creditos : -c.creditos;
-          credEl.textContent=`Créditos Aprobados: ${totalCred}`;
+  .then(response => response.json())
+  .then(data => {
+    const container = document.getElementById('malla-container');
+    const creditosDiv = document.getElementById('creditos-totales');
+    const barra = document.getElementById('barra-interna');
+
+    data.semestres.forEach((semestre) => {
+      const divSemestre = document.createElement('div');
+      divSemestre.className = 'semestre';
+      divSemestre.innerHTML = `<h2>Semestre ${semestre.numero}</h2>`;
+
+      semestre.cursos.forEach(curso => {
+        creditosMaximos += curso.creditos;
+
+        const divCurso = document.createElement('div');
+        divCurso.className = `curso ${curso.tipo}`;
+        divCurso.textContent = `${curso.nombre} (${curso.creditos} créditos)`;
+
+        // Tooltip
+        const tooltip = document.createElement('span');
+        tooltip.className = 'tooltip';
+        tooltip.textContent = curso.tipo === 'electivo' ? 'Curso electivo' : 'Curso obligatorio';
+        divCurso.appendChild(tooltip);
+
+        // Hover: mostrar prerrequisitos resaltados
+        divCurso.addEventListener('mouseover', () => {
+          if (curso.requisitos) {
+            document.querySelectorAll('.curso').forEach(c => {
+              const nombreCurso = c.textContent.split(' (')[0];
+              if (curso.requisitos.includes(nombreCurso)) {
+                c.classList.add('destacado');
+              }
+            });
+          }
         });
-        box.appendChild(el);
+
+        divCurso.addEventListener('mouseout', () => {
+          document.querySelectorAll('.curso.destacado').forEach(c => {
+            c.classList.remove('destacado');
+          });
+        });
+
+        // Click para marcar como aprobado
+        divCurso.addEventListener('click', () => {
+          const aprobado = divCurso.classList.toggle('aprobado');
+          totalCreditos += aprobado ? curso.creditos : -curso.creditos;
+
+          creditosDiv.textContent = `Créditos Aprobados: ${totalCreditos}`;
+          const porcentaje = (totalCreditos / creditosMaximos) * 100;
+          barra.style.width = `${porcentaje}%`;
+        });
+
+        divSemestre.appendChild(divCurso);
       });
-      cont.appendChild(box);
+
+      container.appendChild(divSemestre);
     });
   })
-  .catch(e=>console.error(e));
+  .catch(error => {
+    console.error("Error cargando la malla:", error);
+  });
+
+// Filtro por tipo de curso
+function filtrarCursos(tipo) {
+  document.querySelectorAll('.curso').forEach(curso => {
+    if (tipo === 'todos') {
+      curso.style.display = 'block';
+    } else {
+      curso.style.display = curso.classList.contains(tipo) ? 'block' : 'none';
+    }
+  });
+}
