@@ -3,12 +3,26 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Malla de Arquitectura 2025</title>
+  <title>🏛 Malla de Arquitectura 2025</title>
   <link rel="stylesheet" href="estilo.css" />
 </head>
 <body>
   <h1>🏛 Malla de Arquitectura 2025</h1>
+
   <div id="creditos-totales">Créditos Aprobados: 0</div>
+
+  <div id="progreso">
+    <div id="barra-externa">
+      <div id="barra-interna"></div>
+    </div>
+  </div>
+
+  <div id="filtros">
+    <button onclick="filtrarCursos('todos')">Todos</button>
+    <button onclick="filtrarCursos('obligatorio')">Obligatorios</button>
+    <button onclick="filtrarCursos('electivo')">Electivos</button>
+  </div>
+
   <div id="malla-container"></div>
 
   <script src="script.js"></script>
