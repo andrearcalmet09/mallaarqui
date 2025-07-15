@@ -1,66 +1,114 @@
 body {
   font-family: Arial, sans-serif;
-  background-color: #f4f4f4;
   padding: 20px;
+  background-color: #f7f9fb;
   color: #333;
 }
 
 h1 {
   text-align: center;
-  margin-bottom: 20px;
-}
-
-#malla-container {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 20px;
-}
-
-.semestre {
-  background-color: #fff;
-  border: 2px solid #ccc;
-  border-radius: 8px;
-  padding: 15px;
-  box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
-}
-
-.semestre h2 {
-  text-align: center;
-  background-color: #444;
-  color: #fff;
-  padding: 10px;
-  border-radius: 6px;
-}
-
-.curso {
-  margin: 10px 0;
-  padding: 10px;
-  border-radius: 6px;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
-  border-left: 6px solid #444;
-}
-
-.curso.obligatorio {
-  background-color: #e3f2fd; /* azul claro */
-  border-left-color: #2196f3;
-}
-
-.curso.electivo {
-  background-color: #fff3e0; /* naranja claro */
-  border-left-color: #ff9800;
-}
-
-.curso.aprobado {
-  text-decoration: line-through;
-  background-color: #c8e6c9 !important; /* verde claro */
-  color: #666;
+  margin-bottom: 10px;
 }
 
 #creditos-totales {
   text-align: center;
-  font-weight: bold;
-  margin-bottom: 20px;
   font-size: 18px;
+  margin-bottom: 10px;
 }
 
+.semestre {
+  border: 1px solid #ccc;
+  border-radius: 12px;
+  padding: 15px;
+  margin-bottom: 20px;
+  background-color: #ffffff;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+}
+
+.semestre h2 {
+  margin-top: 0;
+}
+
+.curso {
+  padding: 10px;
+  margin: 5px 0;
+  border-radius: 8px;
+  transition: all 0.2s ease-in-out;
+  position: relative;
+}
+
+.curso.obligatorio {
+  background-color: #d9ecf2;
+}
+
+.curso.electivo {
+  background-color: #e9f7ef;
+}
+
+.curso:hover {
+  transform: scale(1.02);
+  cursor: pointer;
+  background-color: #f5f5f5;
+}
+
+.curso.aprobado {
+  background-color: #b2fab4 !important;
+  font-weight: bold;
+}
+
+.curso .tooltip {
+  display: none;
+  position: absolute;
+  top: -5px;
+  left: 110%;
+  background-color: rgba(50, 50, 50, 0.9);
+  color: #fff;
+  padding: 5px;
+  border-radius: 4px;
+  font-size: 12px;
+  white-space: nowrap;
+  z-index: 100;
+}
+
+.curso:hover .tooltip {
+  display: block;
+}
+
+#barra-externa {
+  width: 100%;
+  height: 20px;
+  background-color: #eee;
+  border-radius: 10px;
+  overflow: hidden;
+  margin: 10px 0;
+}
+
+#barra-interna {
+  height: 100%;
+  background-color: #4caf50;
+  width: 0%;
+  transition: width 0.4s ease-in-out;
+}
+
+#filtros {
+  text-align: center;
+  margin: 20px 0;
+}
+
+#filtros button {
+  margin: 0 5px;
+  padding: 6px 12px;
+  border: none;
+  background-color: #dfe6e9;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+#filtros button:hover {
+  background-color: #b2bec3;
+}
+
+.curso.destacado {
+  border: 2px dashed #f39c12;
+}
