@@ -1,1 +1,71 @@
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f4f4f4;
+  padding: 20px;
+  color: #333;
+}
+
+h1 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+#malla-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 20px;
+}
+
+.semestre {
+  background-color: #fff;
+  border: 2px solid #ccc;
+  border-radius: 8px;
+  padding: 15px;
+  box-shadow: 0 0 5px rgba(0,0,0,0.1);
+}
+
+.semestre h2 {
+  text-align: center;
+  background-color: #222;
+  color: #fff;
+  padding: 10px;
+  border-radius: 6px;
+}
+
+.curso {
+  margin: 10px 0;
+  padding: 10px;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  border-left: 6px solid #444;
+}
+
+.curso.obligatorio {
+  background-color: #e9f5ff;
+  border-left-color: #007acc;
+}
+
+.curso.electivo {
+  background-color: #fff4e5;
+  border-left-color: #ff9900;
+}
+
+.curso.aprobado {
+  text-decoration: line-through;
+  background-color: #c8e6c9 !important;
+  color: #666;
+}
+
+.curso.bloqueado {
+  opacity: 0.5;
+  pointer-events: none;
+}
+
+#creditos-totales {
+  text-align: center;
+  font-weight: bold;
+  margin-bottom: 20px;
+  font-size: 18px;
+}
 
